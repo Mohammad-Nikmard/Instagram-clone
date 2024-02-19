@@ -21,11 +21,11 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       extendBody: true,
       bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
+        borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(15),
           topRight: Radius.circular(15),
         ),
-        child: Container(
+        child: SizedBox(
           height: 68,
           child: BottomNavigationBar(
             currentIndex: _selectedIndex,
@@ -35,7 +35,7 @@ class _MainScreenState extends State<MainScreen> {
               });
             },
             type: BottomNavigationBarType.fixed,
-            backgroundColor: Color(0xFF272B40),
+            backgroundColor: const Color(0xFF272B40),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             items: [
@@ -69,7 +69,7 @@ class _MainScreenState extends State<MainScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: textColor,
+                      color: MyColor.textColor,
                       width: 1,
                     ),
                   ),
@@ -81,7 +81,7 @@ class _MainScreenState extends State<MainScreen> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     border: Border.all(
-                      color: buttonColor,
+                      color: MyColor.buttonColor,
                       width: 1,
                     ),
                   ),
@@ -94,14 +94,14 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
       body: IndexedStack(
-        children: [
+        index: _selectedIndex,
+        children: const [
           HomeScreen(),
           ExploreScreen(),
           AddPostScreen(),
           ActivityScreen(),
           ProfileScreen(),
         ],
-        index: _selectedIndex,
       ),
     );
   }

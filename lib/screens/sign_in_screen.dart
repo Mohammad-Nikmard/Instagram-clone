@@ -45,8 +45,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Expanded(
           flex: 6,
           child: Container(
-            child: Image.asset("images/rocket.png"),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
@@ -56,12 +55,13 @@ class _SignInScreenState extends State<SignInScreen> {
                 ],
               ),
             ),
+            child: Image.asset("images/rocket.png"),
           ),
         ),
         Expanded(
           flex: 4,
           child: Container(
-            color: textColor,
+            color: MyColor.textColor,
           ),
         ),
       ],
@@ -78,8 +78,8 @@ class _SignInScreenState extends State<SignInScreen> {
         Expanded(
           flex: 5,
           child: Container(
-            decoration: BoxDecoration(
-              color: backColor,
+            decoration: const BoxDecoration(
+              color: MyColor.backColor,
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(15),
                 topRight: Radius.circular(15),
@@ -87,23 +87,23 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             child: Column(
               children: [
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Sign in to",
                       style: TextStyle(
-                        color: textColor,
+                        color: MyColor.textColor,
                         fontFamily: "GB",
                         fontSize: 20,
                       ),
                     ),
-                    SizedBox(width: 5),
+                    const SizedBox(width: 5),
                     Image.asset("images/mood.png")
                   ],
                 ),
-                SizedBox(height: 36),
+                const SizedBox(height: 36),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 44),
                   child: TextField(
@@ -113,36 +113,38 @@ class _SignInScreenState extends State<SignInScreen> {
                         FocusScope.of(context).requestFocus(myfocusNode1);
                       });
                     },
-                    style: TextStyle(
-                      color: textColor,
+                    style: const TextStyle(
+                      color: MyColor.textColor,
                       fontFamily: "GM",
                       fontSize: 14,
                     ),
                     decoration: InputDecoration(
                       labelText: "Email",
                       labelStyle: TextStyle(
-                        color: myfocusNode1!.hasFocus ? buttonColor : textColor,
+                        color: myfocusNode1!.hasFocus
+                            ? MyColor.buttonColor
+                            : MyColor.textColor,
                       ),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: textColor,
+                        borderSide: const BorderSide(
+                          color: MyColor.textColor,
                           width: 3,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: buttonColor,
+                        borderSide: const BorderSide(
+                          color: MyColor.buttonColor,
                           width: 3,
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 44),
                   child: TextField(
@@ -152,36 +154,38 @@ class _SignInScreenState extends State<SignInScreen> {
                         FocusScope.of(context).requestFocus(myfocusNode2);
                       });
                     },
-                    style: TextStyle(
-                      color: textColor,
+                    style: const TextStyle(
+                      color: MyColor.textColor,
                       fontFamily: "GM",
                       fontSize: 14,
                     ),
                     decoration: InputDecoration(
                       labelText: "Password",
                       labelStyle: TextStyle(
-                        color: myfocusNode2!.hasFocus ? buttonColor : textColor,
+                        color: myfocusNode2!.hasFocus
+                            ? MyColor.buttonColor
+                            : MyColor.textColor,
                       ),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      contentPadding: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: textColor,
+                        borderSide: const BorderSide(
+                          color: MyColor.textColor,
                           width: 3,
                         ),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15),
-                        borderSide: BorderSide(
-                          color: buttonColor,
+                        borderSide: const BorderSide(
+                          color: MyColor.buttonColor,
                           width: 3,
                         ),
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 SizedBox(
                   height: 46,
                   width: 129,
@@ -190,18 +194,18 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChooseAccountScreen(),
+                          builder: (context) => const ChooseAccountScreen(),
                         ),
                       );
                     },
-                    child: Text("Sign in"),
+                    child: const Text("Sign in"),
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       "Don't have an account? / ",
                       style: TextStyle(
                         fontFamily: "GB",

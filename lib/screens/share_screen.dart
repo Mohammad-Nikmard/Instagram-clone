@@ -22,7 +22,7 @@ class ShareScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         topLeft: Radius.circular(36),
         topRight: Radius.circular(36),
       ),
@@ -40,13 +40,13 @@ class ShareScreen extends StatelessWidget {
                 controller: controller,
                 slivers: [
                   SliverPadding(
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
                     sliver: SliverToBoxAdapter(
                       child: _headerItems(),
                     ),
                   ),
                   _gridContent(),
-                  SliverPadding(
+                  const SliverPadding(
                     padding: EdgeInsets.only(bottom: 110),
                   ),
                 ],
@@ -58,7 +58,7 @@ class ShareScreen extends StatelessWidget {
                   width: 129,
                   child: ElevatedButton(
                     onPressed: () {},
-                    child: Text("Send"),
+                    child: const Text("Send"),
                   ),
                 ),
               ),
@@ -72,7 +72,7 @@ class ShareScreen extends StatelessWidget {
   Widget _headerItems() {
     return Column(
       children: [
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           height: 5,
           width: 67,
@@ -81,19 +81,22 @@ class ShareScreen extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        SizedBox(height: 22),
+        const SizedBox(height: 22),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
+            const Text(
               "Share",
-              style:
-                  TextStyle(fontFamily: "GB", fontSize: 24, color: textColor),
+              style: TextStyle(
+                fontFamily: "GB",
+                fontSize: 24,
+                color: MyColor.textColor,
+              ),
             ),
             Image.asset("images/icon_share_bottomsheet.png"),
           ],
         ),
-        SizedBox(height: 28),
+        const SizedBox(height: 28),
         Container(
           height: 46,
           width: 340,
@@ -106,13 +109,13 @@ class ShareScreen extends StatelessWidget {
             child: Row(
               children: [
                 Image.asset("images/icon_search.png"),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Expanded(
+                const Expanded(
                   child: TextField(
                     style: TextStyle(
-                      color: textColor,
+                      color: MyColor.textColor,
                       fontFamily: "GM",
                       fontSize: 14,
                     ),
@@ -121,7 +124,7 @@ class ShareScreen extends StatelessWidget {
                       focusedBorder: InputBorder.none,
                       hintText: "Search...",
                       hintStyle: TextStyle(
-                        color: textColor,
+                        color: MyColor.textColor,
                         fontFamily: "GB",
                         fontSize: 12,
                       ),
@@ -138,7 +141,7 @@ class ShareScreen extends StatelessWidget {
 
   Widget _gridContent() {
     return SliverPadding(
-      padding: EdgeInsets.only(top: 32, left: 30, right: 30),
+      padding: const EdgeInsets.only(top: 32, left: 30, right: 30),
       sliver: SliverGrid(
         delegate: SliverChildBuilderDelegate(
           (context, index) {
@@ -155,19 +158,22 @@ class ShareScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 Text(
                   names[index],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: textColor, fontFamily: "GB", fontSize: 12),
+                  style: const TextStyle(
+                    color: MyColor.textColor,
+                    fontFamily: "GB",
+                    fontSize: 12,
+                  ),
                 ),
               ],
             );
           },
           childCount: 9,
         ),
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 4,
           mainAxisExtent: 115,
         ),

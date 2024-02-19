@@ -10,7 +10,7 @@ class ChooseAccountScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: _getContent(context),
     );
   }
@@ -19,7 +19,7 @@ class ChooseAccountScreen extends StatelessWidget {
     return Column(
       children: [
         Expanded(
-          child: Container(
+          child: SizedBox(
             child: Stack(
               alignment: AlignmentDirectional.center,
               children: [
@@ -34,8 +34,8 @@ class ChooseAccountScreen extends StatelessWidget {
                         width: 340,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: buttonColor,
-                          gradient: LinearGradient(
+                          color: MyColor.buttonColor,
+                          gradient: const LinearGradient(
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
                             colors: [
@@ -61,24 +61,24 @@ class ChooseAccountScreen extends StatelessWidget {
   Widget _containerInfo(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: 32),
+        const SizedBox(height: 32),
         Container(
           height: 129,
           width: 129,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            image: DecorationImage(
+            image: const DecorationImage(
               image: AssetImage("images/my_profile.jpg"),
               fit: BoxFit.cover,
             ),
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Text(
           "Mohammad_Nikmard",
           style: Theme.of(context).textTheme.headlineLarge,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         SizedBox(
           height: 46,
           width: 129,
@@ -87,7 +87,7 @@ class ChooseAccountScreen extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MainScreen(),
+                  builder: (context) => const MainScreen(),
                 ),
               );
             },
@@ -97,7 +97,7 @@ class ChooseAccountScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 32),
+        const SizedBox(height: 32),
         Text(
           "Switch accound",
           style: Theme.of(context).textTheme.headlineLarge,
@@ -109,11 +109,11 @@ class ChooseAccountScreen extends StatelessWidget {
   Widget _bottomText(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 63, top: 145),
-      child: Container(
+      child: SizedBox(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Don't have an account? / ",
               style: TextStyle(
                 fontFamily: "GB",

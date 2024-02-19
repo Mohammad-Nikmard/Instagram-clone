@@ -3,7 +3,7 @@ import 'package:instagram/constants/constants.dart';
 import 'package:instagram/screens/splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,26 +13,29 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        textTheme: TextTheme(
-          headlineLarge:
-              TextStyle(color: textColor, fontFamily: "GB", fontSize: 16),
+        textTheme: const TextTheme(
+          headlineLarge: TextStyle(
+            color: MyColor.textColor,
+            fontFamily: "GB",
+            fontSize: 16,
+          ),
           headlineMedium: TextStyle(
             fontFamily: "GR",
             fontSize: 10,
             fontWeight: FontWeight.w700,
-            color: textColor,
+            color: MyColor.textColor,
           ),
           headlineSmall: TextStyle(
             fontFamily: "GM",
-            color: greyColor,
+            color: MyColor.greyColor,
             fontSize: 12,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: buttonColor,
-            foregroundColor: textColor,
-            textStyle: TextStyle(
+            backgroundColor: MyColor.buttonColor,
+            foregroundColor: MyColor.textColor,
+            textStyle: const TextStyle(
               fontFamily: "GB",
               fontSize: 16,
             ),
@@ -43,8 +46,8 @@ class MyApp extends StatelessWidget {
         ),
         outlinedButtonTheme: OutlinedButtonThemeData(
           style: OutlinedButton.styleFrom(
-            side: BorderSide(
-              color: greyColor,
+            side: const BorderSide(
+              color: MyColor.greyColor,
               width: 2,
             ),
             shape: RoundedRectangleBorder(
@@ -54,7 +57,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: DefaultTabController(
         length: 2,
         child: NestedScrollView(
@@ -63,7 +63,7 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisSpacing: 5,
                         crossAxisSpacing: 5,
                         repeatPattern: QuiltedGridRepeatPattern.inverted,
-                        pattern: [
+                        pattern: const [
                           QuiltedGridTile(1, 1),
                           QuiltedGridTile(2, 2),
                           QuiltedGridTile(1, 1),
@@ -97,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                         mainAxisSpacing: 5,
                         crossAxisSpacing: 5,
                         repeatPattern: QuiltedGridRepeatPattern.inverted,
-                        pattern: [
+                        pattern: const [
                           QuiltedGridTile(1, 1),
                           QuiltedGridTile(2, 2),
                           QuiltedGridTile(1, 1),
@@ -128,7 +128,7 @@ class ProfileScreen extends StatelessWidget {
                   height: 66,
                   width: 66,
                   decoration: BoxDecoration(
-                    border: Border.all(color: buttonColor, width: 2),
+                    border: Border.all(color: MyColor.buttonColor, width: 2),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
@@ -138,7 +138,7 @@ class ProfileScreen extends StatelessWidget {
                       width: 66,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image: AssetImage("images/my_profile.jpg"),
                           fit: BoxFit.cover,
                         ),
@@ -146,14 +146,17 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 15),
-                Column(
+                const SizedBox(width: 15),
+                const Column(
                   children: [
                     SizedBox(height: 18),
                     Text(
                       "محمد برنامه نویس موبایل",
                       style: TextStyle(
-                          color: textColor, fontFamily: "SM", fontSize: 12),
+                        color: MyColor.textColor,
+                        fontFamily: "SM",
+                        fontSize: 12,
+                      ),
                     ),
                     SizedBox(height: 5),
                     Text(
@@ -165,12 +168,12 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset("images/icon_profile_edit.png"),
               ],
             ),
-            SizedBox(height: 10),
-            Container(
+            const SizedBox(height: 10),
+            const SizedBox(
               width: 200,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -178,95 +181,101 @@ class ProfileScreen extends StatelessWidget {
                   Text(
                     "برنامه نویسی یه تخصصه که عشق و تعهد میخواد. یه برنامه نویس با تعهد و منظم و باتجربه ی یک سال کار با فریم ورک فلاتر ",
                     style: TextStyle(
-                        fontFamily: "SM", fontSize: 10, color: textColor),
+                      fontFamily: "SM",
+                      fontSize: 10,
+                      color: MyColor.textColor,
+                    ),
                     textAlign: TextAlign.right,
                   ),
                   Text(
                     "👇نمونه کار های من در گیت هاب",
                     style: TextStyle(
-                        fontFamily: "SM", fontSize: 10, color: textColor),
+                      fontFamily: "SM",
+                      fontSize: 10,
+                      color: MyColor.textColor,
+                    ),
                     textAlign: TextAlign.right,
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 7),
+            const SizedBox(height: 7),
             Row(
               children: [
                 Image.asset("images/icon_link.png"),
-                SizedBox(width: 5),
-                Text(
+                const SizedBox(width: 5),
+                const Text(
                   "yek.link/Mohammad",
                   style: TextStyle(
                       color: Colors.blue, fontFamily: "GB", fontSize: 12),
                 ),
               ],
             ),
-            SizedBox(height: 11),
+            const SizedBox(height: 11),
             Row(
               children: [
                 Image.asset("images/icon_job.png"),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text(
                   "Developer",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 Image.asset("images/icon_location.png"),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text(
                   "IRAN",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               children: [
-                Text(
+                const Text(
                   "18",
                   style: TextStyle(
                     fontFamily: "GB",
-                    color: textColor,
+                    color: MyColor.textColor,
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text(
                   "posts",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                SizedBox(width: 15),
-                Text(
+                const SizedBox(width: 15),
+                const Text(
                   "1K",
                   style: TextStyle(
                     fontFamily: "GB",
-                    color: textColor,
+                    color: MyColor.textColor,
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text(
                   "Followers",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
-                SizedBox(width: 15),
-                Text(
+                const SizedBox(width: 15),
+                const Text(
                   "116",
                   style: TextStyle(
                     fontFamily: "GB",
-                    color: textColor,
+                    color: MyColor.textColor,
                     fontSize: 14,
                   ),
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text(
                   "Following",
                   style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -275,11 +284,11 @@ class ProfileScreen extends StatelessWidget {
                     height: 46,
                     child: ElevatedButton(
                       onPressed: () {},
-                      child: Text("Follow"),
+                      child: const Text("Follow"),
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Expanded(
                   child: SizedBox(
                     height: 46,
@@ -290,10 +299,10 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Message",
                         style: TextStyle(
-                          color: greyColor,
+                          color: MyColor.greyColor,
                         ),
                       ),
                     ),
@@ -301,7 +310,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
           ],
         ),
       ),
@@ -311,17 +320,17 @@ class ProfileScreen extends StatelessWidget {
   Widget _sliverAppBar() {
     return SliverAppBar(
       automaticallyImplyLeading: false,
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       bottom: PreferredSize(
-        preferredSize: Size.fromHeight(10),
+        preferredSize: const Size.fromHeight(10),
         child: Container(
           height: 13,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),
             ),
-            color: backColor,
+            color: MyColor.backColor,
           ),
         ),
       ),
@@ -352,13 +361,13 @@ class ProfileScreen extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(17),
               border: Border.all(
-                color: textColor,
+                color: MyColor.textColor,
                 width: 2,
               ),
             ),
             child: Image.asset("images/icon_plus.png"),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             "Your Story",
             style: Theme.of(context).textTheme.headlineMedium,
@@ -388,12 +397,12 @@ class ProfileScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 20),
                   child: Column(
                     children: [
-                      Container(
+                      SizedBox(
                         height: 64,
                         width: 64,
                         child: Image.asset("images/highlight$index.png"),
                       ),
-                      SizedBox(height: 10),
+                      const SizedBox(height: 10),
                       Text(
                         highlights[index],
                         style: Theme.of(context).textTheme.headlineMedium,
@@ -408,13 +417,13 @@ class ProfileScreen extends StatelessWidget {
 }
 
 class TabBarDelegate extends SliverPersistentHeaderDelegate {
-  TabBar? _tabBar;
+  final TabBar? _tabBar;
   TabBarDelegate(this._tabBar);
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: backColor,
+      color: MyColor.backColor,
       child: _tabBar,
     );
   }

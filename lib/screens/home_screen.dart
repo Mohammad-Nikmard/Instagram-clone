@@ -26,11 +26,11 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: CustomScrollView(
         slivers: [
           SliverPadding(
-            padding: EdgeInsets.only(top: 13),
+            padding: const EdgeInsets.only(top: 13),
             sliver: SliverToBoxAdapter(
               child: _storyList(),
             ),
@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               childCount: 6,
             ),
           ),
-          SliverPadding(
+          const SliverPadding(
             padding: EdgeInsets.only(bottom: 50),
           ),
         ],
@@ -110,25 +110,31 @@ class HomeScreen extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 2),
+                  const SizedBox(height: 2),
                   Text(
                     indexes[index],
-                    style: TextStyle(
-                        fontFamily: "GB", fontSize: 12, color: textColor),
+                    style: const TextStyle(
+                      fontFamily: "GB",
+                      fontSize: 12,
+                      color: MyColor.textColor,
+                    ),
                   ),
-                  SizedBox(height: 5),
+                  const SizedBox(height: 5),
                   Text(
                     character[index],
-                    style: TextStyle(
-                        fontFamily: "GB", fontSize: 12, color: textColor),
+                    style: const TextStyle(
+                      fontFamily: "GB",
+                      fontSize: 12,
+                      color: MyColor.textColor,
+                    ),
                   ),
                 ],
               ),
-              Spacer(),
+              const Spacer(),
               Image.asset("images/icon_menu.png"),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           Container(
             height: 440,
             width: 440,
@@ -166,31 +172,33 @@ class HomeScreen extends StatelessWidget {
                               Row(
                                 children: [
                                   Image.asset("images/icon_hart.png"),
-                                  SizedBox(width: 6),
+                                  const SizedBox(width: 6),
                                   Text(
                                     likeNumbers[index],
-                                    style: TextStyle(
-                                        fontFamily: "GB",
-                                        fontSize: 14,
-                                        color: textColor),
+                                    style: const TextStyle(
+                                      fontFamily: "GB",
+                                      fontSize: 14,
+                                      color: MyColor.textColor,
+                                    ),
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 40),
+                              const SizedBox(width: 40),
                               Row(
                                 children: [
                                   Image.asset("images/icon_comments.png"),
-                                  SizedBox(width: 6),
+                                  const SizedBox(width: 6),
                                   Text(
                                     comments[index],
-                                    style: TextStyle(
-                                        fontFamily: "GB",
-                                        fontSize: 14,
-                                        color: textColor),
+                                    style: const TextStyle(
+                                      fontFamily: "GB",
+                                      fontSize: 14,
+                                      color: MyColor.textColor,
+                                    ),
                                   ),
                                 ],
                               ),
-                              SizedBox(width: 31),
+                              const SizedBox(width: 31),
                               IconButton(
                                 onPressed: () {
                                   showModalBottomSheet(
@@ -219,7 +227,7 @@ class HomeScreen extends StatelessWidget {
                                 },
                                 icon: Image.asset("images/icon_share.png"),
                               ),
-                              SizedBox(width: 35),
+                              const SizedBox(width: 35),
                               Image.asset("images/icon_save.png"),
                             ],
                           ),
@@ -250,12 +258,12 @@ class HomeScreen extends StatelessWidget {
       child: DottedBorder(
         borderType: BorderType.RRect,
         strokeWidth: 2,
-        color: buttonColor,
-        dashPattern: [30, 10],
-        radius: Radius.circular(12),
-        padding: EdgeInsets.all(3),
+        color: MyColor.buttonColor,
+        dashPattern: const [30, 10],
+        radius: const Radius.circular(12),
+        padding: const EdgeInsets.all(3),
         child: ClipRRect(
-          borderRadius: BorderRadius.all(
+          borderRadius: const BorderRadius.all(
             Radius.circular(10),
           ),
           child: Container(
@@ -290,12 +298,12 @@ class HomeScreen extends StatelessWidget {
           child: DottedBorder(
             borderType: BorderType.RRect,
             strokeWidth: 2,
-            color: buttonColor,
-            dashPattern: [40, 10],
-            radius: Radius.circular(17),
-            padding: EdgeInsets.all(3),
+            color: MyColor.buttonColor,
+            dashPattern: const [40, 10],
+            radius: const Radius.circular(17),
+            padding: const EdgeInsets.all(3),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
+              borderRadius: const BorderRadius.all(Radius.circular(15)),
               child: Container(
                 height: 58,
                 width: 58,
@@ -309,7 +317,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Padding(
           padding: const EdgeInsets.only(right: 20),
           child: Text(
@@ -332,13 +340,13 @@ class HomeScreen extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(17),
               border: Border.all(
-                color: textColor,
+                color: MyColor.textColor,
                 width: 2,
               ),
             ),
             child: Image.asset("images/icon_plus.png"),
           ),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             "Your Story",
             style: Theme.of(context).textTheme.headlineMedium,

@@ -7,7 +7,7 @@ class AddPostScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: SafeArea(
         child: Stack(
           alignment: AlignmentDirectional.bottomCenter,
@@ -17,7 +17,7 @@ class AddPostScreen extends StatelessWidget {
                 _upperInfo(context),
                 _singleContainer(),
                 _postGrids(),
-                SliverPadding(
+                const SliverPadding(
                   padding: EdgeInsets.only(bottom: 100),
                 ),
               ],
@@ -32,7 +32,7 @@ class AddPostScreen extends StatelessWidget {
   Widget _bottomSheet(BuildContext context) {
     return SizedBox(
       child: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFF272B40),
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20),
@@ -47,10 +47,13 @@ class AddPostScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 "Draft",
                 style: TextStyle(
-                    color: buttonColor, fontFamily: "GB", fontSize: 16),
+                  color: MyColor.buttonColor,
+                  fontFamily: "GB",
+                  fontSize: 16,
+                ),
               ),
               Text(
                 "Gallery",
@@ -69,9 +72,9 @@ class AddPostScreen extends StatelessWidget {
 
   Widget _postGrids() {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 17),
+      padding: const EdgeInsets.symmetric(horizontal: 17),
       sliver: SliverGrid(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 5,
           crossAxisSpacing: 5,
@@ -99,11 +102,11 @@ class AddPostScreen extends StatelessWidget {
 
   Widget _singleContainer() {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(horizontal: 17),
+      padding: const EdgeInsets.symmetric(horizontal: 17),
       sliver: SliverToBoxAdapter(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
-          child: Container(
+          child: SizedBox(
             height: 375,
             width: 394,
             child: Image.asset("images/add_post_item.png"),
@@ -115,7 +118,7 @@ class AddPostScreen extends StatelessWidget {
 
   Widget _upperInfo(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.only(left: 17, right: 17, top: 28, bottom: 11),
+      padding: const EdgeInsets.only(left: 17, right: 17, top: 28, bottom: 11),
       sliver: SliverToBoxAdapter(
         child: Row(
           children: [
@@ -123,14 +126,14 @@ class AddPostScreen extends StatelessWidget {
               "Post",
               style: Theme.of(context).textTheme.headlineLarge,
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Image.asset("images/icon_arrow_down.png"),
-            Spacer(),
+            const Spacer(),
             Text(
               "Next",
               style: Theme.of(context).textTheme.headlineLarge,
             ),
-            SizedBox(width: 15),
+            const SizedBox(width: 15),
             Image.asset("images/icon_arrow_right_box.png"),
           ],
         ),

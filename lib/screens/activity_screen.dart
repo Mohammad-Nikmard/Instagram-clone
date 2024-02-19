@@ -21,20 +21,20 @@ class _ActivityScreenState extends State<ActivityScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: SafeArea(
         child: Column(
           children: [
             Container(
               height: 68,
               width: double.infinity,
-              color: backColor,
+              color: MyColor.backColor,
               child: TabBar(
-                labelStyle: TextStyle(fontFamily: "GB"),
-                indicatorPadding: EdgeInsets.symmetric(horizontal: 17),
-                indicatorColor: buttonColor,
+                labelStyle: const TextStyle(fontFamily: "GB"),
+                indicatorPadding: const EdgeInsets.symmetric(horizontal: 17),
+                indicatorColor: MyColor.buttonColor,
                 controller: _controller,
-                tabs: [
+                tabs: const [
                   Tab(
                     text: "Following",
                   ),
@@ -86,48 +86,51 @@ class _ActivityScreenState extends State<ActivityScreen>
                 Container(
                   height: 6,
                   width: 6,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: buttonColor,
+                    color: MyColor.buttonColor,
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Container(
                   height: 40,
                   width: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage("images/share_screen_icon6.png"),
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           "Alirezaaa",
                           style: TextStyle(
-                              color: textColor, fontFamily: "GB", fontSize: 12),
+                            color: MyColor.textColor,
+                            fontFamily: "GB",
+                            fontSize: 12,
+                          ),
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           "Started following",
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
                       ],
                     ),
-                    SizedBox(height: 5),
+                    const SizedBox(height: 5),
                     Row(
                       children: [
                         Text(
                           "You",
                           style: Theme.of(context).textTheme.headlineSmall,
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Text(
                           "3 min",
                           style: Theme.of(context).textTheme.headlineSmall,
@@ -136,7 +139,7 @@ class _ActivityScreenState extends State<ActivityScreen>
                     ),
                   ],
                 ),
-                Spacer(),
+                const Spacer(),
                 _activityStatus(status),
               ],
             ),
@@ -155,7 +158,7 @@ class _ActivityScreenState extends State<ActivityScreen>
           width: 40,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            image: DecorationImage(
+            image: const DecorationImage(
               image: AssetImage("images/item1.png"),
               fit: BoxFit.cover,
             ),
@@ -168,10 +171,10 @@ class _ActivityScreenState extends State<ActivityScreen>
           width: 75,
           child: OutlinedButton(
             onPressed: () {},
-            child: Text(
+            child: const Text(
               "Message",
               style: TextStyle(
-                color: greyColor,
+                color: MyColor.greyColor,
                 fontSize: 10,
                 fontFamily: "GB",
               ),
@@ -190,7 +193,7 @@ class _ActivityScreenState extends State<ActivityScreen>
               ),
             ),
             onPressed: () {},
-            child: Text(
+            child: const Text(
               "Follow",
               style: TextStyle(fontSize: 12),
             ),
@@ -201,7 +204,7 @@ class _ActivityScreenState extends State<ActivityScreen>
 
   Widget _customHeader(String text) {
     return SliverPadding(
-      padding: EdgeInsets.only(left: 13),
+      padding: const EdgeInsets.only(left: 13),
       sliver: SliverToBoxAdapter(
         child: Text(
           text,

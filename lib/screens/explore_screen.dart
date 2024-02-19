@@ -8,14 +8,14 @@ class ExploreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backColor,
+      backgroundColor: MyColor.backColor,
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
             _searchBox(),
             _categories(),
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 17),
+              padding: const EdgeInsets.symmetric(horizontal: 17),
               sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate(
                   (context, index) {
@@ -38,7 +38,7 @@ class ExploreScreen extends StatelessWidget {
                   mainAxisSpacing: 5,
                   crossAxisSpacing: 5,
                   repeatPattern: QuiltedGridRepeatPattern.inverted,
-                  pattern: [
+                  pattern: const [
                     QuiltedGridTile(2, 1),
                     QuiltedGridTile(2, 2),
                     QuiltedGridTile(1, 1),
@@ -68,7 +68,7 @@ class ExploreScreen extends StatelessWidget {
       "Tom Ellis"
     ];
     return SliverPadding(
-      padding: EdgeInsets.only(left: 17, right: 17, bottom: 20),
+      padding: const EdgeInsets.only(left: 17, right: 17, bottom: 20),
       sliver: SliverToBoxAdapter(
         child: SizedBox(
           height: 23,
@@ -83,7 +83,7 @@ class ExploreScreen extends StatelessWidget {
                   width: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
-                    color: Color(0xFF272B40),
+                    color: const Color(0xFF272B40),
                   ),
                   child: Center(
                     child: Text(
@@ -102,25 +102,25 @@ class ExploreScreen extends StatelessWidget {
 
   Widget _searchBox() {
     return SliverPadding(
-      padding: EdgeInsets.only(top: 20, left: 17, right: 17, bottom: 20),
+      padding: const EdgeInsets.only(top: 20, left: 17, right: 17, bottom: 20),
       sliver: SliverToBoxAdapter(
         child: Container(
           height: 46,
           width: 394,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(13),
-            color: Color(0xFF272B40),
+            color: const Color(0xFF272B40),
           ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               children: [
                 Image.asset("images/icon_search.png"),
-                SizedBox(width: 10),
-                Expanded(
+                const SizedBox(width: 10),
+                const Expanded(
                   child: TextField(
                     style: TextStyle(
-                      color: textColor,
+                      color: MyColor.textColor,
                       fontSize: 12,
                       fontFamily: "GB",
                     ),
@@ -129,14 +129,14 @@ class ExploreScreen extends StatelessWidget {
                       focusedBorder: InputBorder.none,
                       hintText: "Search...",
                       hintStyle: TextStyle(
-                        color: textColor,
+                        color: MyColor.textColor,
                         fontFamily: "GB",
                         fontSize: 12,
                       ),
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Image.asset("images/icon_scan.png"),
               ],
             ),
