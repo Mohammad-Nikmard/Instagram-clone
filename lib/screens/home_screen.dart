@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0.0,
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
         title: SizedBox(
@@ -227,7 +228,7 @@ class HomeScreen extends StatelessWidget {
                                 },
                                 icon: Image.asset("images/icon_share.png"),
                               ),
-                              const SizedBox(width: 35),
+                              const SizedBox(width: 30),
                               Image.asset("images/icon_save.png"),
                             ],
                           ),

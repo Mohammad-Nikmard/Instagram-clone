@@ -30,9 +30,13 @@ class _ActivityScreenState extends State<ActivityScreen>
               width: double.infinity,
               color: MyColor.backColor,
               child: TabBar(
+                indicatorSize: TabBarIndicatorSize.tab,
+                labelColor: Colors.white,
+                dividerColor: Colors.transparent,
                 labelStyle: const TextStyle(fontFamily: "GB"),
-                indicatorPadding: const EdgeInsets.symmetric(horizontal: 17),
                 indicatorColor: MyColor.buttonColor,
+                unselectedLabelColor: MyColor.greyColor,
+                indicatorPadding: const EdgeInsets.symmetric(horizontal: 17),
                 controller: _controller,
                 tabs: const [
                   Tab(
@@ -168,7 +172,7 @@ class _ActivityScreenState extends State<ActivityScreen>
       case ActivityStatus.Follow:
         return SizedBox(
           height: 36,
-          width: 75,
+          width: 90,
           child: OutlinedButton(
             onPressed: () {},
             child: const Text(
@@ -185,7 +189,7 @@ class _ActivityScreenState extends State<ActivityScreen>
       case ActivityStatus.FollowBack:
         return SizedBox(
           height: 36,
-          width: 70,
+          width: 90,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(

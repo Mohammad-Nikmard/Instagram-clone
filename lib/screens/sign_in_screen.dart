@@ -191,7 +191,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   width: 129,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
+                      Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                           builder: (context) => const ChooseAccountScreen(),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:instagram/constants/constants.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -24,6 +25,9 @@ class ProfileScreen extends StatelessWidget {
                 floating: true,
                 delegate: TabBarDelegate(
                   TabBar(
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    indicatorColor: MyColor.buttonColor,
+                    dividerColor: Colors.transparent,
                     tabs: [
                       Tab(
                         icon: Image.asset("images/icon_tab_posts.png"),
@@ -44,64 +48,75 @@ class ProfileScreen extends StatelessWidget {
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 17),
                 child: CustomScrollView(
                   slivers: [
-                    SliverGrid(
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/item$index.png"),
-                                fit: BoxFit.cover,
+                    SliverPadding(
+                      padding: const EdgeInsets.only(bottom: 100),
+                      sliver: SliverGrid(
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/item$index.png"),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      }, childCount: 18),
-                      gridDelegate: SliverQuiltedGridDelegate(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
-                        repeatPattern: QuiltedGridRepeatPattern.inverted,
-                        pattern: const [
-                          QuiltedGridTile(1, 1),
-                          QuiltedGridTile(2, 2),
-                          QuiltedGridTile(1, 1),
-                        ],
+                          );
+                        }, childCount: 18),
+                        gridDelegate: SliverQuiltedGridDelegate(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 5,
+                          crossAxisSpacing: 5,
+                          repeatPattern: QuiltedGridRepeatPattern.inverted,
+                          pattern: const [
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(2, 2),
+                            QuiltedGridTile(1, 1),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 20, horizontal: 17),
+                padding: const EdgeInsets.only(
+                  top: 20,
+                  left: 17,
+                  right: 17,
+                ),
                 child: CustomScrollView(
                   slivers: [
-                    SliverGrid(
-                      delegate: SliverChildBuilderDelegate((context, index) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(15),
-                          child: Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage("images/item$index.png"),
-                                fit: BoxFit.cover,
+                    SliverPadding(
+                      padding: const EdgeInsets.only(
+                        bottom: 100,
+                      ),
+                      sliver: SliverGrid(
+                        delegate: SliverChildBuilderDelegate((context, index) {
+                          return ClipRRect(
+                            borderRadius: BorderRadius.circular(15),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage("images/item$index.png"),
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      }, childCount: 18),
-                      gridDelegate: SliverQuiltedGridDelegate(
-                        crossAxisCount: 3,
-                        mainAxisSpacing: 5,
-                        crossAxisSpacing: 5,
-                        repeatPattern: QuiltedGridRepeatPattern.inverted,
-                        pattern: const [
-                          QuiltedGridTile(1, 1),
-                          QuiltedGridTile(2, 2),
-                          QuiltedGridTile(1, 1),
-                        ],
+                          );
+                        }, childCount: 18),
+                        gridDelegate: SliverQuiltedGridDelegate(
+                          crossAxisCount: 3,
+                          mainAxisSpacing: 5,
+                          crossAxisSpacing: 5,
+                          repeatPattern: QuiltedGridRepeatPattern.inverted,
+                          pattern: const [
+                            QuiltedGridTile(1, 1),
+                            QuiltedGridTile(2, 2),
+                            QuiltedGridTile(1, 1),
+                          ],
+                        ),
                       ),
                     ),
                   ],
@@ -185,7 +200,7 @@ class ProfileScreen extends StatelessWidget {
                       fontSize: 10,
                       color: MyColor.textColor,
                     ),
-                    textAlign: TextAlign.right,
+                    textAlign: TextAlign.start,
                   ),
                   Text(
                     "👇نمونه کار های من در گیت هاب",
@@ -204,10 +219,21 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Image.asset("images/icon_link.png"),
                 const SizedBox(width: 5),
-                const Text(
-                  "yek.link/Mohammad",
-                  style: TextStyle(
-                      color: Colors.blue, fontFamily: "GB", fontSize: 12),
+                InkWell(
+                  onTap: () async {
+                    await launchUrl(
+                      Uri.parse("https://github.com/Mohammad-Nikmard"),
+                      mode: LaunchMode.externalApplication,
+                    );
+                  },
+                  child: const Text(
+                    "https://github.com/Mohammad-Nikmard",
+                    style: TextStyle(
+                      color: Colors.blue,
+                      fontFamily: "GB",
+                      fontSize: 12,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -325,10 +351,14 @@ class ProfileScreen extends StatelessWidget {
         preferredSize: const Size.fromHeight(10),
         child: Container(
           height: 13,
-          decoration: const BoxDecoration(
-            borderRadius: BorderRadius.only(
+          decoration: BoxDecoration(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(15),
               topRight: Radius.circular(15),
+            ),
+            border: Border.all(
+              width: 0,
+              color: MyColor.backColor,
             ),
             color: MyColor.backColor,
           ),
