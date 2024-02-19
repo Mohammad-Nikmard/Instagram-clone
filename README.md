@@ -1,16 +1,15 @@
 # instagram
+![mockup](assets/mockup.png)
 
-A new Flutter project.
 
-## Getting Started
+## Overview
+This is a prototype of instagram application with a complex ui desgin that could show user some posts. User has access to activity feed or even profile and could also use share button to share any post and more...
 
-This project is a starting point for a Flutter application.
+## Features 
+- **Main Activiy** : Works just like instagram
+- **Post Feature** : Each post represents likes, comments, share and save with stories.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Package Used 
+ - dotted_border
+ - flutter_staggered_grid_view
+ - url_launcher
