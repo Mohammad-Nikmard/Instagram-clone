@@ -31,6 +31,7 @@ flutter:
    - images/
    - images/profilepics/
    - images/post_covers/
+   - assets/
 
   fonts:
     - family: GB
